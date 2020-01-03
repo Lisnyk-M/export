@@ -127,8 +127,8 @@ window.onload=function(){
 		body.castShadow = true;
 		scene.add(body);
       
-        var bumpMapBody = new THREE.TextureLoader().load("model/cerberus/Cerberus_M.jpg");
-        var blphaMapBody = new THREE.TextureLoader().load("model/cerberus/Cerberus_R.jpg");
+        var bumpMapBody = new THREE.TextureLoader().load('model/cerberus/Cerberus_M.jpg');
+        var blphaMapBody = new THREE.TextureLoader().load('model/cerberus/Cerberus_R.jpg');
 
         // body.material = new THREE.MeshNormalMaterial();
         body.material = new THREE.MeshPhongMaterial({
