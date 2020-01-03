@@ -88,7 +88,7 @@ loader.load( 'fonts/helvetiker_regular.typeface.json', function ( font ) {
 
 	var sphere_sh_geometry = new THREE.SphereBufferGeometry(10, 64, 64);
 	var sphere_sh = new THREE.Mesh(sphere_sh_geometry, shaderMaterial);
-    sphere_sh.position.set(-10, 10, 0);
+    sphere_sh.position.set(-20, 10, 0);
     sphere_sh.castShadow = true;
 	scene.add(sphere_sh);
 
