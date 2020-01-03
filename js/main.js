@@ -103,6 +103,13 @@ window.onload=function(){
          textureBody.needsUpdate = true;
     });
 
+    var bumpMapBody = new THREE.Texture();
+    loader.load('model/cerberus/Cerberus_M.jpg', function(image){
+        bumpMapBody.image = image;
+        bumpMapBody.needsUpdate = true;
+   });
+
+
     meshes = [];
     //var body;
     var objLoader = new THREE.OBJLoader();
@@ -127,8 +134,8 @@ window.onload=function(){
 		body.castShadow = true;
 		scene.add(body);
       
-        var bumpMapBody = new THREE.TextureLoader().load('model/cerberus/Cerberus_M.jpg');
-        var blphaMapBody = new THREE.TextureLoader().load('model/cerberus/Cerberus_R.jpg');
+        //var bumpMapBody = new THREE.TextureLoader().load('model/cerberus/Cerberus_M.jpg');
+        // var blphaMapBody = new THREE.TextureLoader().load('model/cerberus/Cerberus_R.jpg');
 
         // body.material = new THREE.MeshNormalMaterial();
         body.material = new THREE.MeshPhongMaterial({
