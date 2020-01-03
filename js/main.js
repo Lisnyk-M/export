@@ -35,6 +35,29 @@ window.onload=function(){
 	// 	{color: 0xff0000, wireframe: true});
     // var cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
     
+    //========================== text geometry ===========================
+    var loader = new THREE.FontLoader();
+
+loader.load( 'fonts/helvetiker_regular.typeface.json', function ( font ) {
+
+	var geometry = new THREE.TextGeometry( 'Hello three.js!', {
+		font: font,
+		size: 80,
+		height: 5,
+		curveSegments: 12,
+		bevelEnabled: true,
+		bevelThickness: 10,
+		bevelSize: 8,
+		bevelOffset: 0,
+		bevelSegments: 5
+    } );
+    var text = new THREE.Mesh(geometry, cubeMaterial);
+    scene.add(text);
+    text.position.set(-5, 0.3, -24);
+    text.scale.set(0.02, 0.02, 0.02);
+    text.castShadow = true;
+} );
+//========================== text geometry ===========================
 
     var cubeGeometry = new THREE.CubeGeometry(4,4,4);
     var cubeMaterial = new THREE.MeshPhongMaterial(
@@ -46,7 +69,7 @@ window.onload=function(){
 	cube.position.z = 0;
 	cube.scale.y = 10;
 	cube.castShadow = true;
-	scene.add(cube);
+	// scene.add(cube);
      
 	var planeGeometry = new THREE.PlaneGeometry(50, 50, 10, 10);
 	//   var planeMaterial = new THREE.MeshLambertMaterial({color: 0x00DD00, side: THREE.DoubleSide, wireframe: false});
@@ -161,6 +184,7 @@ window.onload=function(){
         strela = meshes2[0];
         strela.material = new THREE.MeshPhongMaterial({specular: 0x222222, color: 0x0000ff});
         console.log(meshes);
+        strela.castShadow = true;
         // strela.scale.set(0.01, 0.01, 0.01);
         strela.position.set(0, 1, 30);
         scene.add(strela);
@@ -182,7 +206,7 @@ window.onload=function(){
     // Create the final object to add to the scene
     var curveObject = new THREE.Line( geometry, material );
     curveObject.castShadow = true;
-    scene.add(curveObject);
+    // scene.add(curveObject);
     curveObject.position.x += 20;
     curveObject.scale.y = 5;
     
